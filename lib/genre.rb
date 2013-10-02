@@ -16,8 +16,12 @@ class Genre
     @songs = []
   end
 
-  def self.action(index)
-    self.all[index-1].list_songs
+  # def self.action(index)
+  #   self.all[index-1].list_songs
+  # end
+
+  def self.list_songs(index)
+    self.all[index -1].list_songs
   end
 
   def list_songs

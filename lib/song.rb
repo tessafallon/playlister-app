@@ -15,6 +15,10 @@ class Song
     self.all[index-1].play
   end
 
+  def self.play(index)
+    all[index - 1].play
+  end
+
   def play
     puts "playing #{self.title}, enjoy!"
   end
