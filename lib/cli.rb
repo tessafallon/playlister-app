@@ -7,7 +7,7 @@ require_relative 'song'
 require_relative 'genre'
 require_relative 'parser'
 
-parse_directory(File.join(Dir.pwd,'data')
+parse_directory(File.join(Dir.pwd,'data'))
 
 puts "Welcome to the playlist!!!"
 puts "Please enter a command:"
