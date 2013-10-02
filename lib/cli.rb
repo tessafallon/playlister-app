@@ -1,19 +1,12 @@
-require_relative 'memorable'
-require_relative 'findable'
-require_relative 'listable'
-
 require_relative 'artist'
 require_relative 'song'
 require_relative 'genre'
 require_relative 'parser'
 
-require 'debugger'
-
 parse_directory(File.join(Dir.pwd,'data'))
 
 puts "Welcome to the playlist!!!"
 puts "Please enter a command:"
-
 command = ""
 
 while command != 'exit'

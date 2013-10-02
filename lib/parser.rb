@@ -1,6 +1,4 @@
 
-require_relative 'memorable'
-require_relative 'findable'
 require_relative 'artist'
 require_relative 'song'
 require_relative 'genre'

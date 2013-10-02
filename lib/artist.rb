@@ -1,16 +1,24 @@
 class Artist
   attr_accessor :name, :songs
+  
+  def self.find_by_name(name)
+    all.detect{|a| a.name == name}
+  end
 
-  extend Memorable::ClassMethods
-  extend Findable
-  extend Listable
+  def self.list
+    all.each_with_index do |o, index|
+      puts "#{index+1}. #{o.name}"
+    end
+  end
 
-  include Memorable::InstanceMethods
+  def initialize
+    self.class.all << self
+    @songs = []
+  end
 
   def self.reset_artists
     reset_all
   end
-  reset_artists
 
   def self.action(index)
     self.all[index-1].list_songs
@@ -22,11 +30,6 @@ class Artist
     self.songs.each_with_index do |s, index|
       puts "#{index+1}. #{s.name}"
     end
-  end
-
-  def initialize
-    super
-    @songs = []
   end
 
   def genres
@@ -41,4 +44,23 @@ class Artist
     songs << song
     song.artist = self
   end
+
+  def count
+    self.class.all.size
+  end
+
+  def self.count
+    @all.size
+  end
+
+  def self.all
+    @all
+  end
+  
+  def self.reset_all
+    @all = []
+  end
+
+  reset_artists
+
 end

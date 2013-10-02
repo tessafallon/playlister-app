@@ -1,11 +1,15 @@
 class Song
   attr_accessor :artist, :genre, :name
-  extend Memorable::ClassMethods
-  extend Listable
 
-  include Memorable::InstanceMethods
+  def self.list
+    all.each_with_index do |o, index|
+      puts "#{index+1}. #{o.name}"
+    end
+  end
 
-  reset_all
+  def initialize
+    self.class.all << self
+  end
 
   def self.action(index)
     self.all[index-1].play
@@ -23,4 +27,23 @@ class Song
     @genre = genre
     genre.songs << self
   end
+
+  def self.reset_all
+    @all = []
+  end
+
+  def count
+    self.class.all.size
+  end
+
+  def self.count
+    @all.size
+  end
+
+  def self.all
+    @all
+  end
+
+  reset_all
+
 end
