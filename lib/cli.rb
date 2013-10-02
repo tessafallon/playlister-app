@@ -7,6 +7,8 @@ require_relative 'song'
 require_relative 'genre'
 require_relative 'parser'
 
+require 'debugger'
+
 parse_directory(File.join(Dir.pwd,'data'))
 
 puts "Welcome to the playlist!!!"

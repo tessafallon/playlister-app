@@ -17,8 +17,10 @@ class Artist
   end
 
   def list_songs
-    Song.all.each_with_index do |s, index|
-      puts "#{index+1}. #{s.name}" if s.genre == self
+    # avi initially had this as Song.all and then filtered by if s.genre == self
+    # this should be pulled out of both artist and genre into listable
+    self.songs.each_with_index do |s, index|
+      puts "#{index+1}. #{s.name}"
     end
   end
 
