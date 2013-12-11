@@ -1,0 +1,5 @@
+<h1><%= @user_genre.upcase!%> Songs </h1>
+<% @l_genres.each do |song| %>
+	<p><%= song.name %></p>
+<% end %>
+<a href="/home"> - restart - </a>

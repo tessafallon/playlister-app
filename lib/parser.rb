@@ -22,4 +22,3 @@ def parse_directory(dir_name)
     artist.add_song(song)
   end
 end
-

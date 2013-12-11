@@ -1,7 +1,4 @@
-<h1> Artist</h1>
-<ul><% @list.each do |artist|%>
-	<li> <%= artist %> </li>
-	<%end %>
-
-</ul>
-<a href= "/home">Back</a>
+<h1>Artists</h1>
+<% @list.each do |artist_name| %>
+	<p><a href="/home/artist/<%= artist_name %>"> <%=artist_name %> </a></p>
+<% end %>
